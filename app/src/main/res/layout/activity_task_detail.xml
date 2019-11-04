@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.TaskDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="상세보기" />
+
+    <TextView
+        android:id="@+id/textViewTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="할 일 내용"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="10dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="카테고리"
+            />
+
+        <TextView
+            android:id="@+id/textViewCategory"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="안드로이드 2주차"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
+    <LinearLayout
+        android:id="@+id/viewStartTime"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="시작 시간"
+            />
+
+        <TextView
+            android:id="@+id/textViewStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019/08/22 12:23:32"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
+    <LinearLayout
+        android:id="@+id/viewEndTime"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="종료 시간"
+            />
+
+        <TextView
+            android:id="@+id/textViewEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019/08/22 13:00:00"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="걸린 시간"
+            />
+
+        <TextView
+            android:id="@+id/textViewDurationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10분 5초"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewMemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메모"
+            android:textSize="18sp"
+            android:layout_margin="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonWriteMemo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/imageButtonAddPhoto"
+            app:srcCompat="@drawable/ic_edit_black_24dp"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonAddPhoto"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/ic_add_a_photo_black_24dp"
+            android:background="@android:color/transparent"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPagerImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/imageButtonAddPhoto"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPagerImage"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/worm_dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsSize="10dp"
+            app:dotsColor="@color/colorAccent"
+            app:dotsStrokeColor="@color/colorAccent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

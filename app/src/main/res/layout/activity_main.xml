@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="TimeTracker" />
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지금 당신이 집중하고자 하는 일을 적어주세요!"
+        android:layout_marginVertical="10dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextTaskName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="어떤 일을 하시겠습니까?"
+        app:layout_constraintTop_toBottomOf="@id/textViewInfo"
+        app:layout_constraintLeft_toLeftOf="@id/textViewInfo"
+        app:layout_constraintRight_toRightOf="@id/textViewInfo"
+        />
+
+    <TextView
+        android:id="@+id/textViewTaskName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:text="할 일 내용"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@id/editTextTaskName"
+        app:layout_constraintLeft_toLeftOf="@id/editTextTaskName"
+        app:layout_constraintRight_toRightOf="@id/editTextTaskName"
+        app:layout_constraintBottom_toBottomOf="@id/editTextTaskName"
+        android:singleLine="true" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/searchLottie"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintDimensionRatio="h, 1:1"
+        android:scaleType="centerCrop"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toRightOf="@id/editTextTaskName"
+        app:layout_constraintBottom_toTopOf="@id/pieView"
+        app:lottie_fileName="search.json"/>
+
+    <TextView
+        android:id="@+id/textViewCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/editTextTaskName"
+        app:layout_constraintRight_toRightOf="@id/editTextTaskName"
+        app:layout_constraintTop_toBottomOf="@id/editTextTaskName"/>
+
+    <com.ramijemli.percentagechartview.PercentageChartView
+        android:id="@+id/pieView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:pcv_mode="pie"
+        app:pcv_startAngle="270"
+        app:pcv_gradientAngle="0"
+        app:pcv_backgroundColor="#ffffff"
+        app:pcv_textColor="#000000"
+        app:pcv_textSize="25sp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewCategory"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/seekBar"
+        />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:max="60"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pieView"
+        app:layout_constraintBottom_toTopOf="@id/imageButtonPlay"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/LottieTimer"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pieView"
+        app:layout_constraintBottom_toTopOf="@id/imageButtonPlay"
+        app:lottie_fileName="redsandtimer.json"/>
+
+    <TextView
+        android:id="@+id/textView0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0분"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintLeft_toLeftOf="@id/seekBar"/>
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60분"
+        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintRight_toRightOf="@id/seekBar"/>
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_replay_black_24dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/pieView"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="15sp"
+        android:layout_marginRight="20dp"
+        android:text="초기화"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonPlay"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/play_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom"
+        android:background="#ffffff"
+        />
+
+</android.support.constraint.ConstraintLayout>

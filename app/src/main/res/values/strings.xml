@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TimeTracker</string>
+
+    <string name="admob_app_id">ca-app-pub-3868646427853915~7825878341</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3868646427853915/6321224982</string>
+
+</resources>
